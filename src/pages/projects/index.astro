@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const projects = [
+  {
+    slug: "rc-model-strandbeest",
+    title: "Custom RC Model Strandbeest",
+    summary: "Placeholder summary for a mechanical build and control project."
+  },
+  {
+    slug: "high-altitude-weather-balloon",
+    title: "High Altitude Weather Balloon",
+    summary: "Placeholder summary for a flight and data collection project."
+  },
+  {
+    slug: "geomorphology-in-python",
+    title: "Geomorphology in Python",
+    summary: "Placeholder summary for a modeling or analysis project."
+  },
+  {
+    slug: "architectural-representation",
+    title: "Architectural Representation",
+    summary: "Placeholder summary for a visualization or CAD project."
+  },
+  {
+    slug: "prompt-engineering-research",
+    title: "Prompt Engineering Research",
+    summary: "Placeholder summary for an applied research project."
+  },
+  {
+    slug: "manim-schematic-video",
+    title: "Manim Schematic Video",
+    summary: "Placeholder summary for a visualization or animation project."
+  }
+];
+---
+
+<BaseLayout title="Projects" description="Project list">
+  <section class="card">
+    <h1>Projects</h1>
+    <p>Select a project to view details, media, and outcomes.</p>
+  </section>
+
+  <section style="margin-top: 24px;" class="grid">
+    {projects.map((project) => (
+      <article class="card">
+        <h2>{project.title}</h2>
+        <p>{project.summary}</p>
+        <a class="button" href={`/projects/${project.slug}`}>View Project</a>
+      </article>
+    ))}
+  </section>
+</BaseLayout>

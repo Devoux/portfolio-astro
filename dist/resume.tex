@@ -1,0 +1,181 @@
+\documentclass[10pt]{article} % set main font size
+\usepackage[empty]{fullpage} % use full page. remove header and footer
+\usepackage{enumitem} % add list functionality
+\usepackage{marvosym} % add euro symbol €
+\usepackage{tabularx} % create columns
+\usepackage{array}
+\usepackage[hidelinks]{hyperref} % remove hyperlink color and borders
+
+% select font
+\usepackage{charter} 
+% \usepackage[default]{lato}
+% \usepackage{tgpagella}
+% \usepackage[sfdefault]{roboto}
+% \usepackage{libertine}
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+
+\usepackage[default]{raleway}
+%\usepackage[defaultsans]{droidsans}
+%\usepackage{cmbright}
+
+\renewcommand*\familydefault{\sfdefault} % Force the sans-serif version of any font used
+
+\usepackage{multicol}
+\usepackage{ragged2e}
+
+\usepackage{geometry} % Required for adjusting page dimensions and margins
+
+\geometry{
+	paper=letterpaper, % Paper size, change to letterpaper for US letter size
+	top=0.5in, % Top margin
+	bottom=0.5in, % Bottom margin
+	left=0.5in, % Left margin
+	right=.8in, % Right margin
+	headheight=0.75cm, % Header height
+	footskip=1cm, % Space from the bottom margin to the baseline of the footer
+	headsep=0.5cm, % Space from the top margin to the baseline of the header
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+
+\def\Vhrulefill{\leavevmode\leaders\hrule height 0.7ex depth \dimexpr 0.4pt-0.7ex\hfill\kern0pt}
+
+% Command to output section title headings
+\newcommand{\sect}[1]{% The only parameter is the section text
+	\vspace{1ex} % Whitespace before the section title
+	{\large\textbf{#1}} \hspace{4pt} \Vhrulefill \\ %Section title
+\vspace{-5pt}}
+
+\newcommand{\resitem}[1]{\item[$\bullet$] #1 \vspace{-2pt}}
+\newcommand{\resitemnobullet}[1]{\item[] #1 \vspace{-2pt}}
+
+\newcommand{\ressubheadingA}[4]{
+\vspace{-1ex}\begin{tabular*}{7.108in}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-4pt}}
+
+\newcommand{\ressubheadingB}[2]{
+\vspace{-1ex}\begin{tabular*}{7.108in}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & \textit{#2} \\
+\end{tabular*}\vspace{-4pt}}
+
+\newcommand{\ressubheadingC}[1]{
+\vspace{-1ex}\begin{tabular*}{6.9in}{ll}
+		#1 \\
+\end{tabular*}\vspace{-4pt}}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X} % Left-aligned
+\newcolumntype{C}{>{\centering\arraybackslash}X}   % Center-aligned
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}  % Right-aligned
+
+\newcommand{\ressubheadingD}[4]{
+\vspace{-1ex}\hspace{-1ex}\begin{tabularx}{7.12in}{L C C R}
+		#1 & #2 & #3 & #4 \\
+\end{tabularx}\vspace{-4pt}}
+
+\newcommand{\ressubheadingE}[1]{
+\vspace{-1ex}\hspace{-1ex}\begin{tabularx}{7.12in}{C}
+		\textbf{\Large{#1}} \\
+\end{tabularx}\vspace{12pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\large$\bullet$}}$}
+
+\begin{document}
+
+% \begin{minipage}[t]{1\textwidth} 
+% 	\vspace{-\baselineskip} % Required for vertically aligning minipages
+%     \centering
+% 	{\Large{\textbf{Alder Nadon}}} % First name
+% 	\vspace{6pt}
+% \end{minipage}
+% \hfill
+
+\ressubheadingE{Alder Nadon}
+
+%\ressubheadingD{nadon.a@northeastern.edu}{(505) 500-5544}{sites.google.com/view/aldernadon-portfolio}{Boston, MA}
+
+\vspace{-1ex}\hspace{-1ex}\begin{tabularx}{7.12in}{l l X r}
+		nadon.a@northeastern.edu & (505) 500-5544 & \href{https://sites.google.com/view/aldernadon-portfolio}{sites.google.com/view/aldernadon-portfolio}
+ & Santa Fe, NM \\
+\end{tabularx}\vspace{-4pt}
+
+\vspace{4pt}
+
+\sect{Education}
+\begin{itemize}[left=0pt]
+    \item[] 
+        \ressubheadingA{Northeastern University}{Boston, MA}{Candidate for Bachelor of Science in Mechanical Engineering | 3.96 GPA | Dean's List}{Expected May 2027}
+        \begin{itemize}
+            \resitem{Courses: Dynamics, Fluid Mechanics, Thermodynamics, Mechanics of Materials, Probability and Statistics, Advanced Technical Writing, Calculus I--III, Physics I--II}
+        \end{itemize} \vspace{2pt}
+    \item[] 
+        \ressubheadingA{Santa Fe High School}{Santa Fe, NM}{Graduated class salutatorian, National Honor Society, Varsity Tennis}{May 2023}
+    
+\end{itemize}
+
+\sect{Experience}
+
+\begin{itemize}[left=0pt]
+    \item[]
+        \ressubheadingA{BlueHalo}{Albuquerque, NM}{Systems Engineering Intern -- Space Technologies}{June 2025 -- Dec 2025}
+        \begin{itemize}
+            \resitem{Mapped and structured 400+ stakeholder requirements into Cameo Systems Modeler, enhancing model traceability and enabling efficient system architecture analysis}
+            \resitem{Developed standardized test report templates, streamlining verification workflows and improving consistency across cross-functional engineering teams}
+            \resitem{Created reusable requirements traceability matrix (RTM) templates, significantly accelerating compliance tracking and ensuring full coverage from requirements to test artifacts}
+        \end{itemize} \vspace{2pt}
+    \item[] 
+        \ressubheadingA{STEM Scaffold Santa Fe}{Santa Fe, NM}{Mentor}{Oct 2022 -- Dec 2022}
+        \begin{itemize}
+            \resitem{Mentored and guided 20+ students through a 10-week introductory engineering curriculum}
+            \resitem{Introduced beginners to TinkerCAD, Arduino coding and wiring, engineering principles, and the physics of photoresistors}
+        \end{itemize} \vspace{2pt}
+    \item[] 
+        \ressubheadingA{CURRENTS New Media}{Santa Fe, NM}{Intern}{June 2021 -- July 2021}
+        \begin{itemize}
+            \resitem{Installed A/V equipment, walls, fixtures, mountings for art/technology exhibition}
+            \resitem{Coordinated with clients to prepare installations in a fast paced environment}
+            \resitem{Managed A/V operations for theater space, including customer interaction and technical troubleshooting}
+        \end{itemize}
+\end{itemize}
+
+\sect{Projects}
+\begin{itemize}[left=0pt]
+    \item[] 
+        \ressubheadingB{Laser-Controlled Arcade Shooting Game}{Sept 2023 -- Dec 2023}
+        \begin{itemize}
+            \resitem{Created laser-cut components using AutoCAD under tight deadlines, including a custom-designed laser pistol with internal wiring and a trigger mechanism}
+            \resitem{Proposed and fabricated design features such as servo actuated moving photoresistor targets with diverse difficulty-adjusted behaviors}
+            \resitem{Collaborated with teammates to meet project milestones and maintain the project timeline, including implementing project management tools like a Gantt chart, work schedule, and fishbone diagrams}
+        \end{itemize} \vspace{2pt}
+    \item[] 
+        \ressubheadingB{\href{https://sites.google.com/view/aldernadon-portfolio/projects/rc-model-strandbeest?authuser=0}{Radio-Controlled Strandbeest Walker}}{Jan 2023 -- May 2023}
+        \begin{itemize}
+            \resitem{Designed a remote controlled walking acrylic kinetic sculpture based off proportioned linkages}
+            \resitem{Simulated linkage joints with a motion study in Fusion 360 to examine gait and to design drivetrain}
+            \resitem{Laser cut and assembled 300+ custom acrylic parts across 12 gait components}
+            \resitem{Evaluated the walking and turning performance over different terrain types}
+        \end{itemize} \vspace{2pt}
+    \item[] 
+        \ressubheadingB{\href{https://sites.google.com/view/aldernadon-portfolio/projects/prompt-engineering-research?authuser=0}{Prompt Engineering for Diversity in Stable Diffusion}}{Oct 2022 -- May 2023}
+        \begin{itemize}
+            \resitem{Designed a unique methodology to evaluate the creative potential for text prompts in text-to-image generative models (Stable Diffusion)}
+            \resitem{Applied engineering methodologies in quantitative analysis of over 9600 images using a perceptual similarity metric Python program for high-volume data analysis}
+            \resitem{Summarized findings in an in-depth research paper with exploration of scholarly body of knowledge, methodologies, and data analysis}
+        \end{itemize}
+    
+\end{itemize}
+
+
+
+\sect{Skills}
+\begin{itemize}
+    \item \ressubheadingC{\textbf{CAD \& Design:} SolidWorks, AutoCAD, Fusion 360, Rhinoceros 3D}
+    \item \ressubheadingC{\textbf{Programming \& Analysis:} Python, MATLAB, C++, Excel, \LaTeX}
+    \item \ressubheadingC{\textbf{Prototyping \& Tools:} Arduino, 3D Printing (FDM/SLA), Laser Cutting, Power Tools}
+    \item \ressubheadingC{\textbf{Creative Software:} Illustrator, Photoshop, InDesign, Krita, Manim, Blender}
+    
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,231 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Custom RC Model Strandbeest";
+---
+
+<BaseLayout title={title} description="Project detail page">
+  <article class="card project-page">
+    <header class="project-hero">
+      <div>
+        <h1>{title}</h1>
+        <p class="project-summary">
+          Personal RC walking robot inspired by Theo Jansen’s strandbeests.
+        </p>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Skill: Kinematic Design</span>
+        <span class="tag">Skill: Prototyping</span>
+        <span class="tag">Role: Individual Project</span>
+      </div>
+    </header>
+
+    <section class="project-section">
+      <h2>Skills Demonstrated</h2>
+      <ul class="project-list">
+        <li>Kinematic linkage design and gait evaluation for walking mechanisms.</li>
+        <li>CAD motion studies and drivetrain planning in Fusion 360.</li>
+        <li>Precision fabrication and assembly of large multi‑part acrylic mechanisms.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>What (Problem & Context)</h2>
+      <ul class="project-list">
+        <li>Goal: free‑standing walker that can go forward/backward and turn in place.</li>
+        <li>Context: personal design project (not a class or team assignment).</li>
+        <li>Why it was hard: convert Jansen’s linkage into a reliable, compact, manufacturable drivetrain with stable ground contact.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>How (Process & Constraints)</h2>
+      <ul class="project-list">
+        <li>Designed four pairs of legs in Fusion 360 using Jansen’s linkage proportions.</li>
+        <li>Drive architecture: each leg pair on a common gear; two pairs per D‑profile axle.</li>
+        <li>Actuation: two 5V continuous‑rotation servos for differential drive.</li>
+        <li>Simulation: rigid‑body kinematics with joint constraints to validate gait stability.</li>
+        <li>Gait tuning: leg pairs offset to keep at least half the feet on the ground.</li>
+        <li>Fabrication: 300+ acrylic parts (12 gait components) from 3mm cast acrylic.</li>
+        <li>Workflow: DXF nesting in Deepnest, 50W CO2 laser cutting, iterative assembly/testing.</li>
+        <li>Constraints: acrylic tolerances, joint friction, planar alignment, compact drivetrain.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Why (Results & Impact)</h2>
+      <ul class="project-list">
+        <li>Achieved stable, independent leg motion and controlled turning via differential drive.</li>
+        <li>Validated a full design‑to‑fabrication pipeline for complex linkage systems.</li>
+        <li>Strengthened skills in kinematic modeling, simulation‑driven design, and precision assembly.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Team & Contribution</h2>
+      <ul class="project-list">
+        <li>Individual project: owned full scope from concept through assembly and testing.</li>
+        <li>Responsibilities: linkage design, motion‑study validation, drivetrain design, fabrication.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Challenges & Fixes</h2>
+      <ul class="project-list">
+        <li>Issue: friction and binding at pin joints from planar misalignment.</li>
+        <li>Fixes: carriage bolts with Loctite, nylon washers, latex tube spacers, lubrication.</li>
+        <li>Result: reduced friction enough for 5V servos to drive the full mechanism.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Media</h2>
+      <figure class="project-media">
+        <img
+          class="project-media-image"
+          src="/projects/strandbeest/front_view.png"
+          alt="Front view of the RC strandbeest"
+          loading="lazy"
+        />
+      </figure>
+
+      <figure class="project-media">
+        <img
+          class="project-media-image"
+          src="/projects/strandbeest/leg-animation-cut.gif"
+          alt="Leg linkage animation"
+          loading="lazy"
+        />
+      </figure>
+
+      <div class="media-panel">
+        <img
+          class="project-media-image"
+          src="/projects/strandbeest/acrylic_sheet.png"
+          alt="Acrylic sheet layout"
+          loading="lazy"
+        />
+        <img
+          class="project-media-image"
+          src="/projects/strandbeest/components.png"
+          alt="Strandbeest components"
+          loading="lazy"
+        />
+        <img
+          class="project-media-image"
+          src="/projects/strandbeest/parts.png"
+          alt="Cut parts assortment"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="media-carousel" data-carousel="strandbeest" role="region" aria-label="RC module carousel">
+        <div class="media-carousel-stage">
+          <div class="media-carousel-track" data-carousel-track>
+            <img
+              class="media-carousel-item"
+              src="/projects/strandbeest/rc_module.jpg"
+              alt="RC module"
+              loading="lazy"
+            />
+            <img
+              class="media-carousel-item"
+              src="/projects/strandbeest/servo.png"
+              alt="Drive servo"
+              loading="lazy"
+            />
+            <img
+              class="media-carousel-item"
+              src="/projects/strandbeest/side_view.png"
+              alt="Side view of the strandbeest"
+              loading="lazy"
+            />
+          </div>
+          <button
+            class="carousel-button carousel-button--prev"
+            type="button"
+            aria-label="Previous carousel image"
+            data-carousel-prev
+          >
+            &#8592;
+          </button>
+          <button
+            class="carousel-button carousel-button--next"
+            type="button"
+            aria-label="Next carousel image"
+            data-carousel-next
+          >
+            &#8594;
+          </button>
+        </div>
+        <div class="carousel-meta">
+          <p class="carousel-hint">Hardware details — swipe or use arrows.</p>
+          <div class="carousel-dots" role="tablist" aria-label="Carousel slides" data-carousel-dots>
+            <button class="carousel-dot" type="button" aria-label="Go to slide 1" data-carousel-dot></button>
+            <button class="carousel-dot" type="button" aria-label="Go to slide 2" data-carousel-dot></button>
+            <button class="carousel-dot" type="button" aria-label="Go to slide 3" data-carousel-dot></button>
+          </div>
+        </div>
+      </div>
+
+      <figure class="project-media">
+        <video class="project-video" controls preload="metadata">
+          <source src="/projects/strandbeest/test-trim.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </figure>
+    </section>
+
+    <p><a href="/">Back to Bio</a></p>
+
+    <script is:inline>
+      const carousels = document.querySelectorAll("[data-carousel]");
+      carousels.forEach((carousel) => {
+        const track = carousel.querySelector("[data-carousel-track]");
+        const prev = carousel.querySelector("[data-carousel-prev]");
+        const next = carousel.querySelector("[data-carousel-next]");
+        const dots = Array.from(carousel.querySelectorAll("[data-carousel-dot]"));
+        let scrollTimer;
+
+        if (!track || !prev || !next || dots.length === 0) {
+          return;
+        }
+
+        const getIndex = () => Math.round(track.scrollLeft / track.clientWidth);
+
+        const updateControls = () => {
+          const index = getIndex();
+          dots.forEach((dot, idx) => {
+            if (idx === index) {
+              dot.setAttribute("data-active", "true");
+            } else {
+              dot.removeAttribute("data-active");
+            }
+          });
+          prev.disabled = index <= 0;
+          next.disabled = index >= dots.length - 1;
+        };
+
+        const scrollToIndex = (index) => {
+          track.scrollTo({ left: track.clientWidth * index, behavior: "smooth" });
+        };
+
+        prev.addEventListener("click", () => {
+          scrollToIndex(Math.max(0, getIndex() - 1));
+        });
+        next.addEventListener("click", () => {
+          scrollToIndex(Math.min(dots.length - 1, getIndex() + 1));
+        });
+        dots.forEach((dot, idx) => {
+          dot.addEventListener("click", () => scrollToIndex(idx));
+        });
+        track.addEventListener("scroll", () => {
+          window.clearTimeout(scrollTimer);
+          scrollTimer = window.setTimeout(updateControls, 80);
+        });
+        window.addEventListener("resize", updateControls);
+        updateControls();
+      });
+    </script>
+  </article>
+</BaseLayout>

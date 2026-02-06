@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Resume" description="Resume page">
+  <section class="card">
+    <div class="card-header">
+      <h1>Resume</h1>
+      <a class="button" href="/resume.pdf" download>Download Resume (PDF)</a>
+    </div>
+  </section>
+
+  <section style="margin-top: 24px;" class="card">
+    <div class="pdf-viewer">
+      <object data="/resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" type="application/pdf">
+        <p>
+          Your browser does not support embedded PDFs.
+          <a href="/resume.pdf">Download the resume instead.</a>
+        </p>
+      </object>
+    </div>
+  </section>
+</BaseLayout>

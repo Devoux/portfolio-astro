@@ -1,0 +1,113 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Manim Schematic Video";
+---
+
+<BaseLayout title={title} description="Project detail page">
+  <article class="card project-page">
+    <header class="project-hero">
+      <div>
+        <h1>{title}</h1>
+        <p class="project-summary">
+          Technical schematic animation built with Python + Manim to clearly communicate a multi-step engineering
+          process (flows, components, and cause/effect) in a presentation-ready format.
+        </p>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Tool: Python + Manim</span>
+        <span class="tag">Focus: Technical Visualization</span>
+        <span class="tag">Skill: Animation Design</span>
+        <span class="tag">Skill: Technical Communication</span>
+        <span class="tag">Role: Individual Project</span>
+      </div>
+    </header>
+
+    <section class="project-section">
+      <h2>Skills Demonstrated</h2>
+      <ul class="project-list">
+        <li>Manim scene design: composing clean, readable technical diagrams with consistent layout + spacing.</li>
+        <li>Reusable visualization “components” (blocks, arrows, labels, callouts) to keep scenes maintainable.</li>
+        <li>Animation timing + hierarchy: guiding attention with staged reveals, emphasis, and minimal clutter.</li>
+        <li>Diagram correctness: directional flows, labeled inputs/outputs, and clear subsystem boundaries.</li>
+        <li>Presentation-ready rendering: legibility at slide scale, safe margins, and crisp vector-style graphics.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>What (Problem & Context)</h2>
+      <ul class="project-list">
+        <li>Goal: explain a complex system quickly using a schematic that stays readable while the narrative evolves.</li>
+        <li>Challenge: static diagrams get crowded; viewers lose track of “what moves where” and “what changes next.”</li>
+        <li>Solution: a Manim animation that introduces components and flows in logical steps, then consolidates into the full system view.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>How (Process & Constraints)</h2>
+      <ul class="project-list">
+        <li>Storyboarded the system into small beats (component → connection → flow → recap) to reduce cognitive load.</li>
+        <li>Built a modular diagram toolkit in Manim:
+          <ul class="project-list">
+            <li>Parametric “unit blocks” with standardized sizes, anchors, and label positions.</li>
+            <li>Connectors/arrows with consistent stroke/arrowhead sizing and alignment rules.</li>
+            <li>Callouts/highlights to emphasize the active subsystem without re-drawing the entire diagram.</li>
+          </ul>
+        </li>
+        <li>Used Manim’s grouping + transforms to smoothly evolve the schematic (rearrange, zoom, highlight) without visual jumps.</li>
+        <li>Optimized for clarity:
+          <ul class="project-list">
+            <li>Large type + short labels (only what’s necessary on-screen at any moment).</li>
+            <li>Incremental reveals (avoid “everything at once” diagrams).</li>
+            <li>Consistent geometry (straight runs, aligned nodes, predictable reading order).</li>
+          </ul>
+        </li>
+        <li>Rendered at presentation-friendly settings and verified readability in-slide before final export.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Why (Results & Impact)</h2>
+      <ul class="project-list">
+        <li>Produced a clean, narration-friendly schematic video that makes the system easier to follow than a single static slide.</li>
+        <li>Reduced ambiguity by showing directionality and sequencing (what happens first, what feeds what, what returns/recirculates).</li>
+        <li>Created a reusable Manim template for future technical explainers (swap labels/blocks, keep the style + animation language).</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Team & Contribution</h2>
+      <ul class="project-list">
+        <li>Individual work: storyboard → Manim implementation → rendering/export → deck integration.</li>
+        <li>Iterated on pacing and label density based on feedback to maximize clarity.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Media</h2>
+      <figure class="project-media">
+        <video class="project-video" controls preload="metadata">
+          <source
+            src="/projects/manim-schematic-video/alugen-presentation-manimation.faststart.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+        <figcaption class="project-media-caption">
+          Manim schematic animation used in the Alugen presentation.
+        </figcaption>
+      </figure>
+      <figure class="project-media">
+        <img
+          class="project-media-image"
+          src="/projects/manim-schematic-video/schematic-still.jpg"
+          alt="System schematic view"
+          loading="lazy"
+        />
+        <figcaption class="project-media-caption">System schematic view</figcaption>
+      </figure>
+    </section>
+
+    <p><a href="/">Back to Bio</a></p>
+  </article>
+</BaseLayout>

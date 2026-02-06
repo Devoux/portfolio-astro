@@ -1,0 +1,208 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "High Altitude Weather Balloon";
+---
+
+<BaseLayout title={title} description="Project detail page">
+  <article class="card project-page">
+    <header class="project-hero">
+      <div>
+        <h1>{title}</h1>
+        <p class="project-summary">
+          Designed, launched, and recovered a high‑altitude weather balloon payload with
+          active telemetry and onboard imaging.
+        </p>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Skill: Embedded Systems</span>
+        <span class="tag">Skill: Telemetry</span>
+        <span class="tag">Role: Team Project</span>
+      </div>
+    </header>
+
+    <section class="project-section">
+      <h2>Skills Demonstrated</h2>
+      <ul class="project-list">
+        <li>Embedded systems integration (ESP32, sensors, GPS, camera).</li>
+        <li>Custom PCB design and power regulation for flight hardware.</li>
+        <li>Telemetry pipelines and data visualization (LoRa + web app).</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>What (Problem & Context)</h2>
+      <ul class="project-list">
+        <li>Goal: launch and recover a payload with active telemetry transmission.</li>
+        <li>Context: personal project with my brother.</li>
+        <li>Outcome: 85‑mile flight to &gt;60,000 ft ASL with recovered payload and imagery.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>How (Process & Constraints)</h2>
+      <ul class="project-list">
+        <li>Payload: Raspberry Pi Camera v2, GPS, sensors, Li‑ion battery, custom PCB.</li>
+        <li>PCB: ESP32 microcontroller, LoRa transmitter, temp/battery sensing, regulation.</li>
+        <li>Mechanical: 3D‑printed enclosure with insulation for &lt; −50&nbsp;°C conditions.</li>
+        <li>Ground station: React app to simulate/track launches with weather data.</li>
+        <li>Live ops: 3D map tracking, sensor plots, and image downlink during flight.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Why (Results & Impact)</h2>
+      <ul class="project-list">
+        <li>Successful end‑to‑end flight with active telemetry and payload recovery.</li>
+        <li>Captured high‑resolution images across the full ascent and descent.</li>
+        <li>Built experience in PCB design, embedded systems, data transmission, and testing.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Team & Contribution</h2>
+      <ul class="project-list">
+        <li>Collaborated with my brother on payload design and testing.</li>
+        <li>Contributions: payload architecture, PCB integration, telemetry workflow, and ground‑station development.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Media</h2>
+      <figure class="project-media">
+        <img
+          class="project-media-image"
+          src="/projects/weather-balloon/payload.jpg"
+          alt="Weather balloon payload on the ground"
+          loading="lazy"
+        />
+      </figure>
+
+      <div class="media-carousel" data-carousel="flight" role="region" aria-label="Flight imagery carousel">
+        <div class="media-carousel-stage">
+          <div class="media-carousel-track" data-carousel-track>
+            <img
+              class="media-carousel-item"
+              src="/projects/weather-balloon/flight1.jpg"
+              alt="Balloon flight image 1"
+              loading="lazy"
+            />
+            <img
+              class="media-carousel-item"
+              src="/projects/weather-balloon/flight2.jpg"
+              alt="Balloon flight image 2"
+              loading="lazy"
+            />
+            <img
+              class="media-carousel-item"
+              src="/projects/weather-balloon/flight3.jpg"
+              alt="Balloon flight image 3"
+              loading="lazy"
+            />
+          </div>
+          <button
+            class="carousel-button carousel-button--prev"
+            type="button"
+            aria-label="Previous flight image"
+            data-carousel-prev
+          >
+            &#8592;
+          </button>
+          <button
+            class="carousel-button carousel-button--next"
+            type="button"
+            aria-label="Next flight image"
+            data-carousel-next
+          >
+            &#8594;
+          </button>
+        </div>
+        <div class="carousel-meta">
+          <p class="carousel-hint">Flight images — swipe or use arrows.</p>
+          <div class="carousel-dots" role="tablist" aria-label="Flight image slides" data-carousel-dots>
+            <button class="carousel-dot" type="button" aria-label="Go to slide 1" data-carousel-dot></button>
+            <button class="carousel-dot" type="button" aria-label="Go to slide 2" data-carousel-dot></button>
+            <button class="carousel-dot" type="button" aria-label="Go to slide 3" data-carousel-dot></button>
+          </div>
+        </div>
+      </div>
+
+      <figure class="project-media">
+        <img
+          class="project-media-image"
+          src="/projects/weather-balloon/groundstation_gui.png"
+          alt="Ground station software interface"
+          loading="lazy"
+        />
+      </figure>
+
+      <figure class="project-media project-media--portrait">
+        <video class="project-video project-video--portrait" controls preload="metadata">
+          <source src="/projects/weather-balloon/payload_launch.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </figure>
+
+      <div class="pdf-viewer project-pdf">
+        <object
+          data="/projects/weather-balloon/pcb_schematic.pdf"
+          type="application/pdf"
+          aria-label="PCB schematic PDF"
+        >
+          <p>
+            PDF preview unavailable. Download the file to view it:
+            <a href="/projects/weather-balloon/pcb_schematic.pdf">PCB schematic</a>.
+          </p>
+        </object>
+      </div>
+    </section>
+
+    <p><a href="/">Back to Bio</a></p>
+
+    <script is:inline>
+      const flightCarousel = document.querySelector('[data-carousel="flight"]');
+      if (flightCarousel) {
+        const track = flightCarousel.querySelector("[data-carousel-track]");
+        const prev = flightCarousel.querySelector("[data-carousel-prev]");
+        const next = flightCarousel.querySelector("[data-carousel-next]");
+        const dots = Array.from(flightCarousel.querySelectorAll("[data-carousel-dot]"));
+        let scrollTimer;
+
+        const getIndex = () => Math.round(track.scrollLeft / track.clientWidth);
+
+        const updateControls = () => {
+          const index = getIndex();
+          dots.forEach((dot, idx) => {
+            if (idx === index) {
+              dot.setAttribute("data-active", "true");
+            } else {
+              dot.removeAttribute("data-active");
+            }
+          });
+          prev.disabled = index <= 0;
+          next.disabled = index >= dots.length - 1;
+        };
+
+        const scrollToIndex = (index) => {
+          track.scrollTo({ left: track.clientWidth * index, behavior: "smooth" });
+        };
+
+        prev.addEventListener("click", () => {
+          scrollToIndex(Math.max(0, getIndex() - 1));
+        });
+        next.addEventListener("click", () => {
+          scrollToIndex(Math.min(dots.length - 1, getIndex() + 1));
+        });
+        dots.forEach((dot, idx) => {
+          dot.addEventListener("click", () => scrollToIndex(idx));
+        });
+        track.addEventListener("scroll", () => {
+          window.clearTimeout(scrollTimer);
+          scrollTimer = window.setTimeout(updateControls, 80);
+        });
+        window.addEventListener("resize", updateControls);
+        updateControls();
+      }
+    </script>
+  </article>
+</BaseLayout>
